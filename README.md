@@ -8,22 +8,17 @@ In this exercice you will have to implement a table like one we have in the plat
 
 ![Untitled](./docs/design.png)
 
-Link to the figma: https://www.figma.com/file/6moqNUsi9U3oeDxqVEgibV/Front-end-test?type=design&node-id=0-1&mode=design&t=6H9iIbeQ4Pq2sg2U-0
+Link to the figma: https://www.figma.com/design/6moqNUsi9U3oeDxqVEgibV/Front-end-test?node-id=0-1&p=f
 
 ## Specs
 
-- The table **must respect the design** given: https://www.figma.com/file/6moqNUsi9U3oeDxqVEgibV/Front-end-test?type=design&node-id=0-1&mode=design&t=6H9iIbeQ4Pq2sg2U-0
+- The table **must respect the design** given: https://www.figma.com/design/6moqNUsi9U3oeDxqVEgibV/Front-end-test?node-id=0-1&p=f
 
-- The table **must be paginated** using the previous / next buttons located in the top-right
-  - Each page must contain at most 10 elements
-  - The `previous page` button should not appear if I’m on the first page
-  - The `next page` button should not appear if I’m on the last page
 - **The employees can be filtered** by the select on the top-left.
   - If I select Active employees, I must see only active employees in the table
   - If I select Deactivated employees, I must see only deactivated employees in the table
   - If I select all, I must see all employees in the table
   - By default, `all` is selected
-  - **Note: Even when filtering, the data must be paginated! Filtering should reset the pagination**
 
 We will pay a lot of attention to the way you structure the components! You should have at least several components, but you can create as much as you want.
 
@@ -39,16 +34,16 @@ The repository contains a boilerplate to help you get started. It includes:
 
 ## Data Fetching
 
-At Riot we use GraphQL for every single request but the sake of simplicity of this exercice, we provide you a small server that will return you the employees from a HTTP endpoint.
+For the sake of simplicity of this exercice, we provide you a small server that will return you the employees from a HTTP endpoint.
 
-By default the server will run on port 9000 and it exposes a single endpoint: `/employees` that will return you _all_ the employees. This means that you will do the pagination and filtering on the frontend side.
+By default the server will run on port 9000 and it exposes a single endpoint: `/employees` that will return you _all_ the employees. This means that you will do the filtering on the frontend side.
 
 ## Get Started
 
 - clone this repository
-- run `yarn` then:
-  - run `yarn dev` to launch the vite dev server
-  - run `yarn server:start` to launch the server
+- run `pnpm` then:
+  - run `pnpm dev` to launch the vite dev server
+  - run `pnpm server:start` to launch the server
 - Start coding !
 
 If you have any question or if something is not clear, do not hesitate to ask!
