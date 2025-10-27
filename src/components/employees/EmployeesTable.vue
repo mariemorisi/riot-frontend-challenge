@@ -11,7 +11,9 @@
       </TableHeader>
       <TableBody>
           <TableRow v-for="employee in filteredEmployees" :key="employee.id">
-            <TableCell>{{ employee.profilePictureUrl }}</TableCell>
+            <TableCell>
+              <EmployeeAvatar :profilePictureUrl="employee.profilePictureUrl" :name="employee.name" />
+            </TableCell>
             <TableCell>{{ employee.name }}</TableCell>
             <TableCell>
               <span :class="{'employee_text-green': employee.status === 'ACTIVE'}">
@@ -33,7 +35,8 @@ import TableHeaderCell from '@/components/ui/table/TableHeaderCell.vue';
 import TableBody from '@/components/ui/table/TableBody.vue';
 import TableRow from '@/components/ui/table/TableRow.vue';
 import TableCell from '@/components/ui/table/TableCell.vue';
-import BaseSelect from '@/components/ui/select/BaseSelect.vue';
+import BaseSelect from '@/components/ui/BaseSelect.vue';
+import EmployeeAvatar from '@/components/employees/EmployeeAvatar.vue';
 
 import { useEmployees } from '@/composables/useEmployees';
 const { loading, error, filteredEmployees, selectedFilter } = useEmployees();
