@@ -14,7 +14,6 @@ export function useEmployees() {
         error.value = null;
         try {
             employees.value = await fetchEmployees();
-            console.log('employees.value composable : ', employees.value);
         } catch (err) {
             error.value = (err as Error).message;
         } finally {
