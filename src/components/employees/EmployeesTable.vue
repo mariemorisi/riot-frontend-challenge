@@ -13,7 +13,11 @@
           <TableRow v-for="employee in filteredEmployees" :key="employee.id">
             <TableCell>{{ employee.profilePictureUrl }}</TableCell>
             <TableCell>{{ employee.name }}</TableCell>
-            <TableCell>{{ employee.status }}</TableCell>
+            <TableCell>
+              <span :class="{'employee_text-green': employee.status === 'ACTIVE'}">
+                {{ employee.status.charAt(0).toUpperCase() + employee.status.slice(1).toLowerCase() }}
+              </span>
+            </TableCell>
           </TableRow>
       </TableBody>
     </Table>
@@ -41,3 +45,8 @@ const filterOptions = [
 ];
 
 </script>
+<style scoped>
+.employee_text-green {
+  color: var(--color-green);
+}
+</style>
