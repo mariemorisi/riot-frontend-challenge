@@ -6,3 +6,9 @@
     </tr>
   </thead>
 </template>
+<style scoped>
+@import 'tailwindcss';
+.table-header {
+  @apply text-[var(--color-steel)];
+}
+</style>

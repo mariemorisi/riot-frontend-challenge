@@ -4,17 +4,21 @@
         :options="filterOptions"
         v-model="selectedFilter"
     />
-    <Table v-if="!loading && !error">
+    <Table v-if="!loading && !error" class="mt-4">
       <TableHeader>
-        <TableHeaderCell>Name</TableHeaderCell>
-        <TableHeaderCell>Status</TableHeaderCell>
+        <TableRow class="mb-1">
+          <TableHeaderCell>Name</TableHeaderCell>
+          <TableHeaderCell>Status</TableHeaderCell>
+        </TableRow>
       </TableHeader>
       <TableBody>
           <TableRow v-for="employee in filteredEmployees" :key="employee.id">
             <TableCell>
-              <EmployeeAvatar :profilePictureUrl="employee.profilePictureUrl" :name="employee.name" />
+              <div class="flex items-center">
+                <EmployeeAvatar :profilePictureUrl="employee.profilePictureUrl" :name="employee.name" />
+                <div class="ml-2">{{ employee.name }}</div>
+              </div>
             </TableCell>
-            <TableCell>{{ employee.name }}</TableCell>
             <TableCell>
               <span :class="{'employee_text-green': employee.status === 'ACTIVE'}">
                 {{ employee.status.charAt(0).toUpperCase() + employee.status.slice(1).toLowerCase() }}

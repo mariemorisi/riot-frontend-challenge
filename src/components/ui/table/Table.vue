@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
   <div>
-    <table class="table"><slot /></table>
+    <table class="table w-full"><slot /></table>
   </div>
 </template>

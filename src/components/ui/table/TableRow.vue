@@ -1,6 +1,6 @@
 <script lang="ts" setup></script>
 <template>
-    <tr class="table-row">
+    <tr class="flex justify-between items-center pl-[24px] pr-[24px]">
         <slot />
     </tr>
 </template>

@@ -22,7 +22,7 @@ const handleChange = (event: Event) => {
 
 </script>
 <template>
-    <div class="base-select">
+    <div class="base-select m-[24px]">
         <label for="filter" class="base-select__label" v-if="props.label">{{ props.label }}</label>
         <div class="relative">
             <select 
